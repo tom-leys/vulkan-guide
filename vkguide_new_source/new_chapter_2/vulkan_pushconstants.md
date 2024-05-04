@@ -66,7 +66,7 @@ struct ComputePushConstants {
 };
 ```
 
-To set the push constant ranges, we need to change the code that creates the pipeline layout at the start of init_pipelines. the new version looks like this
+To set the push constant ranges, we need to change the code that creates the pipeline layout at the start of init_background_pipelines. the new version looks like this
 
 ^code comp_pipeline_pc chapter-2/vk_engine.cpp
 
@@ -82,7 +82,7 @@ if (!vkutil::load_shader_module("../../shaders/gradient_color.comp.spv", _device
 }
 ```
 
-This is all we need to add pushconstants to a shader. lets now use them from the render loop
+This is all we need to add pushconstants to a shader. Lets now use them from the render loop (in draw_background).
 
 ^code draw_pc chapter-2/vk_engine.cpp
 
